@@ -59,7 +59,7 @@ body {
 
 .bookmark-button__star {
     transform-origin: 50% 50%;
-    transition: fill 0.2s, transform 0.2s;
+    transition: fill 0.2s, transform 0.4s;
 }
 
 .bookmark-button--active .bookmark-button__star {
