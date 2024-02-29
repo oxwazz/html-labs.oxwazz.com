@@ -57,14 +57,28 @@ body {
     transition-property: box-shadow, background-color;
 }
 
-.bookmark-button__star {
-    transform-origin: 50% 50%;
-    transition: fill 0.2s, transform 0.4s;
+.bookmark-button:hover .bookmark-button__star {
+    transform: rotate(45deg);
 }
 
+.bookmark-button--active:hover .bookmark-button__star,
 .bookmark-button--active .bookmark-button__star {
     transform: rotate(216deg);
 }
+
+.bookmark-button__star {
+    transform-origin: 50% 50%;
+    transition-property: fill, transform;
+    transition-duration: 0.2s;
+}
+
+.bookmark-button--active .bookmark-button__star {
+    transition-duration: 0.2s, 0.6s, 0.6s;
+    transition-timing-function: ease, cubic-bezier(.5,-1.5,.6,2.5), cubic-bezier(.5,-1.5,.6,2.5);
+}
+
+
+
 
 
 
