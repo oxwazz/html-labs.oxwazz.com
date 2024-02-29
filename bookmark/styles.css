@@ -44,7 +44,27 @@ body {
     transform: translate(0, -5%);
 }
 
+
+
+/* active state */
 .bookmark-button--active path {
     fill: hsl(45, 95%, 60%);
     stroke: hsl(45, 95%, 60%);
 }
+
+.bookmark-button {
+    transition-duration: 0.2s;
+    transition-property: box-shadow, background-color;
+}
+
+.bookmark-button__star {
+    transform-origin: 50% 50%;
+    transition: fill 0.2s, transform 0.2s;
+}
+
+.bookmark-button--active .bookmark-button__star {
+    transform: rotate(216deg);
+}
+
+
+
