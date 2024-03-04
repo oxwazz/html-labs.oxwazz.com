@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #a3d65c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 2rem;
+}
+
+.racetrack {
+  position: relative;
+  width: 24vmin;
+  height: 7vmin;
+  transform: translate(-8vmin, 0);
+}
+
+.racetrack::before {
+  content: "";
+  box-sizing: border-box;
+  height: 40vmin;
+  width: 40vmin;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%) scale(1.05);
+  border-radius: 50%;
+  border: 5vmin solid #666;
+}
+
+.racecar {
+  user-select: none;
+  transform-origin: 500% 50%;
+  height: 7vmin;
+  width: 4vmin;
+  animation-duration: 2s;
+  animation-name: lap;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes lap {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+#pause:checked ~ .racetrack .racecar {
+  animation-play-state: paused;
+}
