@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #bae3f7;
+}
+
+.cellphone {
+  position: relative;
+  height: 15vmin;
+}
+
+.cellphone::before,
+.cellphone::after {
+  position: absolute;
+  content: "";
+}
+
+.cellphone::after {
+  top: 10%;
+  left: 18%;
+  clip-path: polygon(26% 0, 0 92%, 72% 100%, 100% 8%);
+  background: #ccf5a3;
+  width: 68%;
+  height: 66%;
+}
+
+.cellphone::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(0 10%, 100% 90%, 100% 40%, 0 60%);
+  border-radius: 50%;
+  background: radial-gradient(
+      transparent 0,
+      transparent 65%,
+      #19a1e6 65%,
+      #19a1e6 100%
+    ),
+    radial-gradient(
+      transparent 0,
+      transparent 55%,
+      #19a1e6 55%,
+      #19a1e6 60%,
+      transparent 60%
+    );
+  width: 25vmin;
+  height: 25vmin;
+}
+
+.cellphone img {
+  height: 100%;
+}
+
+.cellphone {
+  animation: ring 0.1s infinite;
+}
+
+.cellphone::after {
+  animation: flash 2s infinite steps(1);
+}
+
+label {
+  position: fixed;
+  z-index: 3;
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+}
+
+input {
+  display: none;
+}
+
+:checked ~ .cellphone {
+  animation-play-state: paused;
+}
+
+:checked ~ .cellphone:after,
+:checked ~ .cellphone:before {
+  display: none;
+  animation-play-state: paused;
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

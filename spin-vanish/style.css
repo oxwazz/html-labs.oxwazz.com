@@ -1,26 +1,26 @@
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00b288;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #00b288;
+  min-height: 100vh;
 }
 
 .bear {
-    height: 25vmin;
-    animation-name: spin, vanish;
-    animation-duration: 2s;
+  animation-duration: 2s;
+  animation-name: spin, vanish;
+  height: 25vmin;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes vanish {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
