@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML Experiments | Oxwazz</title>
+  </head>
+  <body>
+    <h1>HTML Experiments | Oxwazz</h1>
+  </body>
+  <script>
+    const links = [
+      {
+        label: "Cellphone Ringing",
+        href: "/cellphone",
+      },
+      {
+        label: "Bookmark",
+        href: "/bookmark",
+      },
+      {
+        label: "Flip Technique",
+        href: "/flip-technique",
+      },
+    ];
+    const ul = document.createElement("ul");
+    document.body.appendChild(ul);
+    links.forEach((link) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = link.href;
+      a.textContent = link.label;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  </script>
+</html>
