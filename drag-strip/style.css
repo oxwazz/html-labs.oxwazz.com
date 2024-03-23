@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #ad9c85;
+  min-height: 100vh;
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+}
+
+.car--red {
+  margin-top: -36px;
+}
+
+.car--green {
+  margin-top: 4px;
+}
+
+.car img {
+  width: 100%;
+}
+
+.strip {
+  position: relative;
+  background:
+    repeating-linear-gradient(90deg, #fff 0 20px, transparent 20px 25px)
+      no-repeat 0 50%/100% 4px,
+    #bfbfbf;
+  width: 80vw;
+  height: 80px;
+}
+
+.car {
+  transform: translate(calc(-40vw + 25px), 0);
+  animation: race;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.car--green {
+  animation-delay: 0.25s;
+}
+
+@keyframes race {
+  to {
+    transform: translate(calc(40vw - 25px), 0);
+  }
+}
